@@ -2,13 +2,17 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CheckboxComponent } from './checkbox.component';
 
+import { StoreModule } from '@ngrx/store';
+import { reducers } from '../../store/app.reducer';
+
 describe('CheckboxComponent', () => {
   let component: CheckboxComponent;
   let fixture: ComponentFixture<CheckboxComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CheckboxComponent ]
+      declarations: [ CheckboxComponent ],
+      imports: [StoreModule.forRoot(reducers)]
     })
     .compileComponents();
   }));

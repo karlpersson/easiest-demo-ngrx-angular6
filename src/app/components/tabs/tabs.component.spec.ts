@@ -2,13 +2,17 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TabsComponent } from './tabs.component';
 
+import { StoreModule } from '@ngrx/store';
+import { reducers } from '../../store/app.reducer';
+
 describe('TabsComponent', () => {
   let component: TabsComponent;
   let fixture: ComponentFixture<TabsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TabsComponent ]
+      declarations: [ TabsComponent ],
+      imports: [StoreModule.forRoot(reducers)]
     })
     .compileComponents();
   }));
